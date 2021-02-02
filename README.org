@@ -1,0 +1,37 @@
+#+TITLE: Installing gradle in CentOS 8
+#+PROPERTY: header-args :session *shell gradle* :results silent raw
+
+** Contents                                                           :TOC_3:
+  - [[#requirements][Requirements]]
+  - [[#select-version][Select version]]
+  - [[#download-gradle][Download gradle]]
+  - [[#unzip-gradle][Unzip gradle]]
+  - [[#add-gradle-to-the-path][Add gradle to the PATH]]
+
+** Requirements
+
+- unzip
+
+** Select version
+
+#+BEGIN_SRC sh
+GRADLE_VERSION="6.8.1"
+#+END_SRC
+
+** Download gradle
+
+#+BEGIN_SRC sh
+curl -L https://services.gradle.org/distributions/gradle-$GRADLE_VERSION-bin.zip > gradle-$GRADLE_VERSION-bin.zip
+#+END_SRC
+
+** Unzip gradle
+
+#+BEGIN_SRC sh
+unzip -d /opt gradle-$GRADLE_VERSION-bin.zip
+#+END_SRC
+
+** Add gradle to the PATH
+
+#+BEGIN_SRC sh
+PATH=/opt/gradle-$GRADLE_VERSION/bin:$PATH
+#+END_SRC
